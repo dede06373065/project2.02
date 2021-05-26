@@ -1,0 +1,132 @@
+$backgroudColor: rgb(137, 124, 179);
+$darkblue: rgb(64, 74, 172);
+$shadow: rgb(200, 200, 200);
+$green: rgb(137, 197, 72);
+%backimg {
+    background-size: 100%;
+}
+%wordStyle {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: aliceblue;
+    text-align: center;
+}
+body {
+    background-image: url(../asset/backimg1.jpeg);
+    @extend %backimg;
+}
+.nav {
+    width: 100%;
+    background-color: $backgroudColor;
+    height: 90px;
+    &__bar {
+        display: flex;
+        justify-content: space-between;
+        li {
+            padding-top: 10px;
+        }
+        &__logo {
+            width: 25%;
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            color: $green;
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+        &__date {
+            width: 50%;
+            @extend %wordStyle;
+        }
+        &__more {
+            width: 20%;
+            margin-top: 10px;
+            text-align: right;
+        }
+    }
+}
+.content {
+    margin: auto;
+    margin-top: 40px;
+    // height: 580px;
+    width: 85%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px $shadow;
+    background-color: aliceblue;
+
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-image: url(../asset/lighthouse.jpeg);
+        @extend %backimg;
+        border-radius: 5px 5px 0 0;
+        padding: 30px;
+        &__details {
+            width: 45%;
+            margin-top:50px;
+            border: 1px solid $shadow;
+            border-radius: 3px;
+            box-shadow: 3px 3px 3px $shadow;
+
+            text-align: center;
+            color: aliceblue;
+            .degree {
+                @extend %wordStyle;
+            }
+            .otherdetails {
+                li {
+                    padding: 20px;
+                }
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+        &__location {
+            width: 40%;
+            @extend %wordStyle;
+            font-size: 3.5rem;
+            color: red;
+            &:hover {
+                color: $darkblue;
+            }
+        }
+    }
+    &__ground {
+        .row{
+            margin:40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card{
+                border:1px solid $shadow;
+                border-radius: 5px;
+                margin:15px;
+                text-align: center;
+                width:150px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 993px) {
+    .nav__bar__logo {
+        display: none;
+    }
+    .nav__bar__more {
+        width: 45%;
+    }
+    .content__top {
+        height: 420px;
+        &__details {
+            width: 80%;
+            margin-top:0;
+        }
+        &__location {
+            width: 80%;
+        }
+        
+    }
+}
